@@ -1,0 +1,23 @@
+{
+  "name": "cypress-coding-dojo",
+  "version": "1.0.0",
+  "description": "Projeto Cypress desenvolvido no primeiro Dojo realizado na COCUS PT",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murillowelsi/cypress_dojo.git"
+  },
+  "author": "Murillo Welsi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murillowelsi/cypress_dojo/issues"
+  },
+  "homepage": "https://github.com/murillowelsi/cypress_dojo#readme",
+  "devDependencies": {
+    "cypress": "^6.8.0"
+  }
+}
