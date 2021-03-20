@@ -1,9 +1,8 @@
 # Dojo Session: Testes de API com Cypress
 
-Coding Dojo é uma prática de treino de programação onde programadores se reunem em um local físico
-(em tempos normais), escolhe um desafio/problema e começa a desenvolver juntos a solução para este
-problema, seguindo algumas regras que farão com que seja possível que todos participem no desenvolvimento
-da solução.
+Coding Dojo é uma prática de treino de programação onde programadores se reunem em um local físico (em tempos normais),
+escolhe um desafio/problema e começa a desenvolver juntos a solução para este problema, seguindo algumas regras que 
+farão com que seja possível que todos participem no desenvolvimento da solução.
 
 **No Coding Dojo:**
 
@@ -11,9 +10,9 @@ da solução.
 - O objetivo é você aprender algo ou compartilhar algo que tem experiência.
 - A idéia não é finalizar um projeto completo, e sim trocar experiências.
 - Desenvolver a solução em baby steps:
-  - Vamos desenvolver usando TDD, desevolvendo testes simples primeiro e depois incrementando o código.
-  - Daremos sempre preferência para a implementação mais básica, e depois vamos
-  refatorando o código para deixá-lo mais robusto.
+    - Vamos desenvolver usando TDD, desevolvendo testes simples primeiro e depois incrementando o código.
+    - Daremos sempre preferência para a implementação mais básica, e depois vamos refatorando o código para deixá-lo 
+    mais robusto.
 
 ## Objetivos
 
@@ -54,13 +53,12 @@ npm run cypress:open
 
 Após executar esse comando, uma estrutura de projeto será criada.
 
-Vamos então limpar o conteúdo do diretório `integration`. Depois vamos criar um
-diretório dentro em `integration` chamado `Produtos`.
+Vamos então limpar o conteúdo do diretório `integration`. Depois vamos criar um diretório dentro em `integration`
+chamado `Produtos`.
 
 ### Passo 2: Criando o primeiro teste
 
-Dentro de `Produtos` vamos criar um arquivo chamado `GETprodutos.spec.js`, e vamos começar
-a escrever os nossos testes:
+Dentro de `Produtos` vamos criar um arquivo chamado `GETprodutos.spec.js`, e vamos começar a escrever os nossos testes:
 
 ```javascript
 /// <reference types="cypress" />
