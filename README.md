@@ -1,4 +1,6 @@
-# Dojo Session: Testes de API com Cypress
+# Dojo Session
+
+## Testes de API com Cypress
 
 Coding Dojo é uma prática de treino de programação onde programadores se reunem em um local físico (em tempos normais),
 escolhe um desafio/problema e começa a desenvolver juntos a solução para este problema, seguindo algumas regras que 
@@ -104,7 +106,7 @@ context('Given I have access Serverest API', () => {
     });
   });
 
-  describe('When I do GET /products filtering by id', () => {
+  describe('When I do GET /products filtering by id', () => {https://github.com/murillowelsi/cypress-coding-dojo#dojo-session-testes-de-api-com-cypress
     it('Then it should return only the product filtered', () => {
       cy.request({
         method: 'GET',
@@ -236,4 +238,4 @@ context('Given I access the API URI', () => {
 });
 ```
 
-[Voltar para o topo](#dojo-session:-testes-de-api-com-cypress)
+[Voltar para o topo](#dojo-session)
