@@ -106,7 +106,7 @@ context('Given I have access Serverest API', () => {
     });
   });
 
-  describe('When I do GET /products filtering by id', () => {https://github.com/murillowelsi/cypress-coding-dojo#dojo-session-testes-de-api-com-cypress
+  describe('When I do GET /products filtering by id', () => {
     it('Then it should return only the product filtered', () => {
       cy.request({
         method: 'GET',
@@ -115,6 +115,7 @@ context('Given I have access Serverest API', () => {
           _id: 'BeeJh5lz3k6kSIzA'
         }
       })
+      
       .should((response) => {
         expect(response.body.produtos).to.be.an('array')
         expect(response.body.produtos[0])
