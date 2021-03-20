@@ -87,45 +87,52 @@ Se quisermos adicionar um novo teste a este contexto, basta criar um novo bloco 
 ```javascript
 /// <reference types="cypress" />
 
-context('Given I access the API URI', () => {
-  describe('When I do GET all producs', () => {
+context('Given I have access Serverest API', () => {
+  describe('When I do GET /products', () => {
     it('Then it should return all products', () => {
       cy.request({
         method: 'GET',
         url: 'https://serverest.dev/produtos'
       })
-      
-      .should((response) => {
-        cy.log(response.body)
-        expect(response.status).to.eq(200)
-        expect(response.body.quantidade).to.eq(2)
-      });
-      
+
+        .should((response) => {
+          cy.log(response.body)
+          expect(response.status).to.eq(200)
+          expect(response.body.quantidade).to.eq(2)
+        })
+
     });
   });
 
-  describe('When I do GET product filtering by id', () => {
+  describe('When I do GET /products filtering by id', () => {
     it('Then it should return only the product filtered', () => {
       cy.request({
         method: 'GET',
         url: 'https://serverest.dev/produtos',
-        query: '_id=BeeJh5lz3k6kSIzA'
+        qs: {
+          _id: 'BeeJh5lz3k6kSIzA'
+        }
       })
-      
       .should((response) => {
-        cy.log(response.body)
-        expect(response.status).to.eq(200)
-        expect(response.body.produtos[0]._id).to.eq('BeeJh5lz3k6kSIzA')
-      });
-      
+        expect(response.body.produtos).to.be.an('array')
+        expect(response.body.produtos[0])
+        .to.contains({
+          nome: "Logitech MX Vertical",
+          preco: 470,
+          descricao: "Mouse",
+          quantidade: 382,
+          _id: "BeeJh5lz3k6kSIzA"
+        })
+      })
+
     });
   });
 });
 ```
 
-Note que foi necessário duplicar o método **GET** com as mesmas informações. Como melhorar esse código?
+Note que foi necessário duplicar o método **GET** com as mesmas informações. Como melhorar podemos esse código?
 
-Vamos encapsular o GET em um arquivo separado, para que possamos reutilizá-lo sempre que necessário.
+Vamos encapsular o request **GET** em um arquivo separado, para que possamos reutilizá-lo sempre que necessário.
 Nossa estrutura de Projeto ficará assim:
 
 #### Diretório Produtos
@@ -153,5 +160,80 @@ Será o diretório responsável por armazenar nossos **testes**, exemplo:
 - `PUTprodutos.spec.js`
 - `DELETEprodutos.spec.js`
 
+Vamos adicionar a `baseUrl` no arquivo `cypress.json`:
+
+```javascript
+{
+  "baseUrl": "https://serverest.dev",
+  "video": false
+}
+```
+
+Depois criaremos o arquivo `GETprodutos.request.js` dentro do diretório `requests`. Nesse arquivo iremos criar uma 
+função que será responsável por fazer o **GET** no endpoint `/produtos`:
+
+```javascript
+/// <reference types="cypress" />
+
+function allProducts() {
+  return cy.request({
+    method: 'GET',
+    url: '/produtos',
+    failOnStatusCode: false
+  });
+};
+
+export { allProducts };
+```
+
+> Não se esqueça de exportar a função criada.
+
+No arquivo `GETprodutos.spec.js` importe a função criada:
+
+```javascript
+import * as GETprodutos from '../requests/GETprodutos.request';
+```
+
+Substitua o request pela função criada anteriormente:
+
+```javascript
+/// <reference types="cypress" />
+
+import * as GETprodutos from '../requests/GETprodutos.request';
+
+context('Given I access the API URI', () => {
+  describe('When I do GET all producs', () => {
+    it('Then it should return all products', () => {
+      GETprodutos.allProducts()
+
+        .should((response) => {
+          cy.log(response.body)
+          expect(response.status).to.eq(200)
+          expect(response.body.quantidade).to.eq(2)
+        });
+
+    });
+  });
+
+  describe('When I do GET product filtering by id', () => {
+    it('Then it should return only the product filtered', () => {
+      GETprodutos.allProducts()
+      
+      .should((response) => {
+        expect(response.body.produtos).to.be.an('array')
+        expect(response.body.produtos[0])
+        .to.contains({
+          nome: "Logitech MX Vertical",
+          preco: 470,
+          descricao: "Mouse",
+          quantidade: 382,
+          _id: "BeeJh5lz3k6kSIzA"
+        });
+      });
+
+    });
+  });
+});
+```
 
 [Voltar para o topo](#dojo-session:-testes-de-api-com-cypress)
