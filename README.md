@@ -1,5 +1,7 @@
 # Dojo Session
 
+[![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/)
+
 ## Testes de API com Cypress
 
 Coding Dojo é uma prática de treino de programação onde programadores se reunem em um local físico (em tempos normais),
