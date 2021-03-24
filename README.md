@@ -65,9 +65,9 @@ Dentro de `Produtos` vamos criar um arquivo chamado `GETprodutos.spec.js`, e vam
 ```javascript
 /// <reference types="cypress" />
 
-context('Given I access the API URI', () => {
-  describe('When I do GET', () => {
-    it('Then the response body should be valid', () => {
+describe('Products api', () => {
+  context('GET /produtos', () => {
+    it('should return an array with all products', () => {
       cy.request({
         method: 'GET',
         url: 'https://serverest.dev/produtos'
@@ -89,9 +89,9 @@ Se quisermos adicionar um novo teste a este contexto, basta criar um novo bloco 
 ```javascript
 /// <reference types="cypress" />
 
-context('Given I have access Serverest API', () => {
-  describe('When I do GET /products', () => {
-    it('Then it should return all products', () => {
+describe('Products api', () => {
+  context('GET /produtos', () => {
+    it('should return an array with all products', () => {
       cy.request({
         method: 'GET',
         url: 'https://serverest.dev/produtos'
@@ -106,8 +106,8 @@ context('Given I have access Serverest API', () => {
     });
   });
 
-  describe('When I do GET /products filtering by id', () => {
-    it('Then it should return only the product filtered', () => {
+  context('GET /produtos + query string', () => {
+    it('should return an array with only the filtered product', () => {
       cy.request({
         method: 'GET',
         url: 'https://serverest.dev/produtos',
@@ -204,9 +204,9 @@ Substitua o request pela função criada anteriormente:
 
 import * as GETprodutos from '../requests/GETprodutos.request';
 
-context('Given I access the API URI', () => {
-  describe('When I do GET all producs', () => {
-    it('Then it should return all products', () => {
+describe('Products api', () => {
+  context('GET /produtos', () => {
+    it('should return an array with all products', () => {
       GETprodutos.allProducts()
 
         .should((response) => {
@@ -218,8 +218,8 @@ context('Given I access the API URI', () => {
     });
   });
 
-  describe('When I do GET product filtering by id', () => {
-    it('Then it should return only the product filtered', () => {
+  context('GET /produtos + query string', () => {
+    it('should return an array with only the filtered product', () => {
       GETprodutos.allProducts()
       
       .should((response) => {
