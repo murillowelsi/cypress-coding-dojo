@@ -44,7 +44,7 @@ Agora vamos adicionar as seguinte linhas no arquivo `package.json`:
 ```javascript
 "scripts": {
     "cypress:open": "./node_modules/.bin/cypress open",
-    "cypress:run": "./node_modules/.bin/cypress run"
+    "cypress:run": "./node_modules/.bin/cypress run --spec **/*.spec.js"
 ```
 
 Esses comando servirão para executarmos os nossos testes.
@@ -240,5 +240,42 @@ describe('Products api', () => {
   });
 });
 ```
+
+### Passo 3: CI - Executando testes no Github Actions
+
+Para criar um pipeline de execução dos nossos testes usando o Github Actions, crie um diretório na raíz do projeto com 
+o nome `.github` e dentro dela outro diretório chamado `workflows`. Dentro de workflows crie um arquivo chamado `actions.yml`
+com o seguinte conteúdo:
+
+```YML
+name: Cypress CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Cypress tests using Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm i
+    - run: npm run cypress:run
+
+```
+
+Pronto, a cada commit no nosso código, todas as specs serão executadas no pipeline do Github.
 
 [Voltar para o topo](#dojo-session)
