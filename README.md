@@ -2,8 +2,6 @@
 
 [![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/)
 
-## Testes de API com Cypress
-
 Coding Dojo é uma prática de treino de programação onde programadores se reunem em um local físico (em tempos normais),
 escolhe um desafio/problema e começa a desenvolver juntos a solução para este problema, seguindo algumas regras que 
 farão com que seja possível que todos participem no desenvolvimento da solução.
@@ -17,6 +15,21 @@ farão com que seja possível que todos participem no desenvolvimento da soluç�
     - Vamos desenvolver usando TDD, desevolvendo testes simples primeiro e depois incrementando o código.
     - Daremos sempre preferência para a implementação mais básica, e depois vamos refatorando o código para deixá-lo 
     mais robusto.
+
+## Por que usar o Cypress?
+
+O Cypress é um framework de testes automatizados amigável, e que facilita na hora de começcar a escrever seus testes automatizados
+Para começar a automatizar no Cypress nenhuma configuração é necessária. 
+Todas as ferramentas de teste de unidade com as quais você já está familiarizado estão incluídas. 
+
+Com o Cypress você pode:
+
+- testes de e2e
+- testes de unidades
+- testes de componentes
+- testes de API
+- testes de testes de regressão visual
+- e até mesmo pode combinar todos eles.
 
 ## Objetivos
 
