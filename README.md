@@ -31,6 +31,11 @@ farão com que seja possível que todos participem no desenvolvimento da soluç�
 > - testes de testes de regressão visual;
 > - e até mesmo pode combinar todos eles.
 
+## Nosso Alvo
+
+Utilizaremos como alvo dos nossos testes a API [Serverest](https://serverest.dev/), desenvolvida pela comunidade opensource,
+que nos permite testar os métodos HTTP mais utilizados. 
+
 ## Objetivos
 
 1. Acessar o endereço da API [Serverest](https://serverest.dev/).
