@@ -18,18 +18,18 @@ farão com que seja possível que todos participem no desenvolvimento da soluç�
 
 ## Por que usar o Cypress?
 
-O Cypress é um framework de testes automatizados amigável, e que facilita na hora de começcar a escrever seus testes automatizados
-Para começar a automatizar no Cypress nenhuma configuração é necessária. 
-Todas as ferramentas de teste de unidade com as quais você já está familiarizado estão incluídas. 
-
-Com o Cypress você pode:
-
-- testes de e2e
-- testes de unidades
-- testes de componentes
-- testes de API
-- testes de testes de regressão visual
-- e até mesmo pode combinar todos eles.
+> O Cypress é um framework de testes automatizados amigável e fácil de usar. Para começar a escrever seus testes 
+> automatizados nenhuma configuração é necessária. 
+> Todas as ferramentas de teste de unidade com as quais você já está familiarizado estão incluídas. 
+>
+> Com o Cypress você pode:
+>
+> - testes de e2e;
+> - testes de unidades;
+> - testes de componentes;
+> - testes de API;
+> - testes de testes de regressão visual;
+> - e até mesmo pode combinar todos eles.
 
 ## Objetivos
 
