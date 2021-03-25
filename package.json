@@ -1,0 +1,24 @@
+{
+  "name": "cypress-coding-dojo",
+  "version": "1.0.0",
+  "description": "[![Badge ServeRest](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/ServeRest/ServeRest/)",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/murillowelsi/cypress-coding-dojo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/murillowelsi/cypress-coding-dojo/issues"
+  },
+  "homepage": "https://github.com/murillowelsi/cypress-coding-dojo#readme",
+  "devDependencies": {
+    "cypress": "^6.8.0"
+  }
+}
