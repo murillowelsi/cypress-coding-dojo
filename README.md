@@ -16,6 +16,8 @@ farão com que seja possível que todos participem no desenvolvimento da soluç�
     - Daremos sempre preferência para a implementação mais básica, e depois vamos refatorando o código para deixá-lo 
     mais robusto.
 
+[!red-green-refactor](https://kislayverma.com/wp-content/uploads/2020/07/red-green-refactor.png)
+
 > **Por que usar o Cypress?**  
 >
 > O Cypress é um framework de testes automatizados amigável e fácil de usar. Para começar a escrever seus testes 
