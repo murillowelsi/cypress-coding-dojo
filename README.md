@@ -65,6 +65,16 @@ chamado `Produtos`.
 Dentro de `Produtos` vamos criar um arquivo chamado `GETprodutos.spec.js`, e vamos começar a escrever os nossos testes:
 
 ```javascript
+describe('Mocha’s “interface”', () => {
+  context('it provides a way to keep tests easier to read and organized.', () => {
+    it('This is your test case', () => {
+      expect(true).to.eq(true)
+    });
+  });
+});
+```
+
+```javascript
 /// <reference types="cypress" />
 
 describe('Products api', () => {
