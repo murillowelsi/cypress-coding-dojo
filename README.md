@@ -82,6 +82,8 @@ chamado `Produtos`.
 
 Dentro de `Produtos` vamos criar um arquivo chamado `GETprodutos.spec.js`, e vamos começar a escrever os nossos testes:
 
+O Mocha nos oferece a seguinte estrutura de organização dos testes:
+
 ```javascript
 describe('Mocha’s interface - BDD', () => {
   context('it provides a way to keep tests easier to read and organized.', () => {
@@ -91,6 +93,8 @@ describe('Mocha’s interface - BDD', () => {
   });
 });
 ```
+
+Isso irá facilitar a leitura dos testes quando forem executados.
 
 ```javascript
 /// <reference types="cypress" />
@@ -114,7 +118,7 @@ describe('Products api', () => {
 });
 ```
 
-Se quisermos adicionar um novo teste a este contexto, basta criar um novo bloco de `describe` e `it`
+Se quisermos adicionar um novo teste a este contexto, basta criar um novo bloco de `context` e `it`:
 
 ```javascript
 /// <reference types="cypress" />
