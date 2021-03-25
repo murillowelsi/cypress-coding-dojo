@@ -118,6 +118,9 @@ describe('Products api', () => {
 });
 ```
 
+Usar `.should()` permite que você use o response em uma função de callback e deve ser usado quando você precisa 
+manipular alguns valores ou fazer algumas asserções.
+
 Se quisermos adicionar um novo teste a este contexto, basta criar um novo bloco de `context` e `it`:
 
 ```javascript
